@@ -40,4 +40,4 @@ def CreateGraph(idVariable):
     plt.legend()
     plt.show()
 
-CreateGraph(2)
+CreateGraph(4)
