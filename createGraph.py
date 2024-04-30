@@ -1,8 +1,9 @@
 import requests 
+import urllib3
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
-
+urllib3.disable_warnings()
 response = requests.get("https://api.bcra.gob.ar/estadisticas/v1/principalesvariables", verify=False)
 
 responseInJson = response.json()
@@ -32,7 +33,6 @@ def CreateGraph(idVariable, diaDesde, mesDesde, anioDesde, diaHasta, mesHasta, a
     for variable in resultsVariables:
         if variable["idVariable"] == idVariable:
             plt.title(variable["descripcion"])
-    plt.legend()
     plt.show()
 
 
