@@ -1,10 +1,10 @@
 # API BCRA
 
-Se generan gráficas a partir de la información que brinda la API del BCRA. Se debe colococar el id en la función: 
+Se generan gráficas a partir de la información que brinda la API del BCRA. Se debe ingresar la infomacion pedida por consola: 
 
 Ejemplo: 
 
-![image](https://github.com/feliperodriguezd/API-BCRA/assets/72653242/aac69482-274d-4f02-83fe-dd65fe760450)
+![image](https://github.com/feliperodriguezd/API-BCRA/assets/72653242/2410920c-0602-4b4f-a9a4-8fea0f7b635e)
 
 Respuesta:
 
