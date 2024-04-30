@@ -13,8 +13,7 @@ date = datetime.datetime.now()
 day = date.strftime("%d")
 month = date.strftime("%m")
 
-for variable in resultsVariables:
-    idVariable = variable["idVariable"]
+def CreateGraph(idVariable):
     buscar = requests.get("https://api.bcra.gob.ar/estadisticas/v1/datosvariable/{v}/2024-01-01/2024-{m}-{d}".format(v = idVariable,m = month, d = day), verify=False)
 
     buscarInJson = buscar.json()
@@ -35,6 +34,10 @@ for variable in resultsVariables:
     ax.xaxis.set_major_locator(plt.MaxNLocator(7))
     ax.yaxis.set_major_formatter(ticker.FuncFormatter(lambda x, pos: 'US$ ' + '{:,.0f}'.format(x)))
     ax.yaxis.grid(True)
-    plt.title(variable["descripcion"])
+    for variable in resultsVariables:
+        if variable["idVariable"] == idVariable:
+            plt.title(variable["descripcion"])
     plt.legend()
     plt.show()
+
+CreateGraph(2)
