@@ -4,7 +4,8 @@ Se genera una gráfica con la información solicitada Se debe colococar el id en
 
 Ejemplo: 
 
-![image](https://github.com/feliperodriguezd/API-BCRA/assets/72653242/2ed93af7-f82b-42a3-949c-3d6e57229d59)
+![image](https://github.com/feliperodriguezd/API-BCRA/assets/72653242/4e15b657-20c3-49b2-9e37-a4f9825f7f76)
+
 
 Respuesta:
 
