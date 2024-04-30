@@ -1,6 +1,6 @@
 # API BCRA
 
-Se genera una gráfica con la información solicitada Se debe colococar el id en la función: 
+Se generan gráficas a partir de la información que brinda la API del BCRA. Se debe colococar el id en la función: 
 
 Ejemplo: 
 
