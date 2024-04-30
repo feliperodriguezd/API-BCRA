@@ -13,9 +13,6 @@ date = datetime.datetime.now()
 day = date.strftime("%d")
 month = date.strftime("%m")
 
-for a in resultsVariables:
-    print(a["descripcion"])
-
 def CreateGraph(idVariable):
     buscar = requests.get("https://api.bcra.gob.ar/estadisticas/v1/datosvariable/{v}/2024-01-01/2024-{m}-{d}".format(v = idVariable,m = month, d = day), verify=False)
 
