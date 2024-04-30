@@ -1,5 +1,4 @@
 import requests 
-import datetime
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
@@ -9,12 +8,8 @@ response = requests.get("https://api.bcra.gob.ar/estadisticas/v1/principalesvari
 responseInJson = response.json()
 resultsVariables = responseInJson["results"]
 
-date = datetime.datetime.now()
-day = date.strftime("%d")
-month = date.strftime("%m")
-
-def CreateGraph(idVariable):
-    buscar = requests.get("https://api.bcra.gob.ar/estadisticas/v1/datosvariable/{v}/2024-01-01/2024-{m}-{d}".format(v = idVariable,m = month, d = day), verify=False)
+def CreateGraph(idVariable, diaDesde, mesDesde, anioDesde, diaHasta, mesHasta, anioHasta):
+    buscar = requests.get("https://api.bcra.gob.ar/estadisticas/v1/datosvariable/{v}/{ad}-{md}-{dd}/{ah}-{mh}-{dh}".format(v = idVariable, ad = anioDesde, md = mesDesde, dd =  diaDesde, ah = anioHasta, mh = mesHasta, dh = diaHasta), verify=False)
 
     buscarInJson = buscar.json()
     buscarResults = buscarInJson["results"]
@@ -35,9 +30,17 @@ def CreateGraph(idVariable):
     ax.yaxis.set_major_formatter(ticker.FuncFormatter(lambda x, pos: '{:,.0f}'.format(x)))
     ax.yaxis.grid(True)
     for variable in resultsVariables:
-        if variable["idVariable"] == idVariable:
+        if variable["idVariable"] == int(idVariable):
             plt.title(variable["descripcion"])
     plt.legend()
     plt.show()
 
-CreateGraph(15)
+
+print("Ingrese el ID deseado:")
+id = input()
+print("Ingrese fecha desde cuando inice el grafico (dd/mm/yyyy):")
+fechaDesde = input().split("/")
+print("Ingrese fecha hasta cuando mostrar los datos (dd/mm/yyyy):")
+fechaHasta = input().split("/")
+
+CreateGraph(id, fechaDesde[0],fechaDesde[1], fechaDesde[2], fechaHasta[0], fechaHasta[1], fechaHasta[2])
