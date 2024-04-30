@@ -4,13 +4,11 @@ Se genera una gráfica con la información solicitada Se debe colococar el id en
 
 Ejemplo: 
 
-![image](https://github.com/feliperodriguezd/API-BCRA/assets/72653242/4e15b657-20c3-49b2-9e37-a4f9825f7f76)
-
+![image](https://github.com/feliperodriguezd/API-BCRA/assets/72653242/aac69482-274d-4f02-83fe-dd65fe760450)
 
 Respuesta:
 
-![image](https://github.com/feliperodriguezd/API-BCRA/assets/72653242/b21d4389-80b1-47e8-ba11-8cde1ecdd209)
-
+![image](https://github.com/feliperodriguezd/API-BCRA/assets/72653242/b62390e6-a93e-4ceb-8ab0-c57ab9c43b79)
 
 A continuación se deja una tabla con los id y que devuelve:
 
