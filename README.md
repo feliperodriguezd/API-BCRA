@@ -3,7 +3,7 @@
 Se genera una gráfica con la información solicitada. A continuación se deja una tabla con los id y que devuelve:
 
 |  ID | Que Devuelve  |
-|---|---|
+|---|---:|
 |1| |Reservas Internacionales del BCRA (en millones de dólares - cifras provisorias sujetas a cambio de valuación)|
 |4| |Tipo de Cambio Minorista ($ por USD) Comunicación B 9791 - Promedio vendedor|
 |5| |Tipo de Cambio Mayorista ($ por USD) Comunicación A 3500 - Referencia|
