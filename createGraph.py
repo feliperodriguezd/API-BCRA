@@ -26,11 +26,11 @@ def CreateGraph(idVariable, diaDesde, mesDesde, anioDesde, diaHasta, mesHasta, a
     fig, ax = plt.subplots()
     ax.plot(dates, values)
     ax.axis((0, len(dates), 0, max(values)*1.3))
-    ax.xaxis.set_major_locator(plt.MaxNLocator(7))
+    ax.xaxis.set_major_locator(plt.MaxNLocator(6))
     ax.yaxis.set_major_formatter(ticker.FuncFormatter(lambda x, pos: '{:,.0f}'.format(x)))
     ax.yaxis.grid(True)
     for variable in resultsVariables:
-        if variable["idVariable"] == int(idVariable):
+        if variable["idVariable"] == idVariable:
             plt.title(variable["descripcion"])
     plt.legend()
     plt.show()
@@ -42,5 +42,9 @@ print("Ingrese fecha desde cuando inice el grafico (dd/mm/yyyy):")
 fechaDesde = input().split("/")
 print("Ingrese fecha hasta cuando mostrar los datos (dd/mm/yyyy):")
 fechaHasta = input().split("/")
-
-CreateGraph(id, fechaDesde[0],fechaDesde[1], fechaDesde[2], fechaHasta[0], fechaHasta[1], fechaHasta[2])
+try:
+    CreateGraph(int(id), fechaDesde[0],fechaDesde[1], fechaDesde[2], fechaHasta[0], fechaHasta[1], fechaHasta[2])
+except IndexError:
+    print("Error el formato de la fecha colocada")
+except ValueError:
+    print("Error en el id")
