@@ -1,6 +1,9 @@
 # API BCRA
 
-Se genera una gráfica con la información solicitada. A continuación se deja una tabla con los id y que devuelve:
+Se genera una gráfica con la información solicitada Se debe colococar el id en la función: 
+Ej: ![image](https://github.com/feliperodriguezd/API-BCRA/assets/72653242/ff577357-a7ea-4d54-adb1-2da6f83089f1)
+
+A continuación se deja una tabla con los id y que devuelve:
 
 |  ID | Que Devuelve  |
 |---|---|
