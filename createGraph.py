@@ -36,8 +36,25 @@ def CreateGraph(idVariable, diaDesde, mesDesde, anioDesde, diaHasta, mesHasta, a
     plt.show()
 
 
-print("Ingrese el ID deseado:")
-id = input()
+def ConfirmarGrafico(id):
+    for variable in resultsVariables:
+        if variable["idVariable"] == id:
+            print(variable["descripcion"])
+
+confirmacion = "N"
+while (confirmacion != "Y"):
+    print("Ingrese el ID deseado:")
+    id = input()
+    try:
+        ConfirmarGrafico(int(id))
+        print("¿Es este el grafico que desea generar? (y/n)")
+        confirmacion = input().upper()
+        if confirmacion != "Y":
+            if confirmacion != "N":
+                print("Opción no valida")
+    except:
+         print("Opción no valida")
+
 print("Ingrese fecha desde cuando inice el grafico (dd/mm/yyyy):")
 fechaDesde = input().split("/")
 print("Ingrese fecha hasta cuando mostrar los datos (dd/mm/yyyy):")
