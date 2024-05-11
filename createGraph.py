@@ -39,29 +39,33 @@ def CreateGraph(idVariable, diaDesde, mesDesde, anioDesde, diaHasta, mesHasta, a
 def ConfirmarGrafico(id):
     for variable in resultsVariables:
         if variable["idVariable"] == id:
-            print(variable["descripcion"])
+            return variable["descripcion"]
+    raise NameError()
 
 confirmacion = "N"
-while (confirmacion != "Y"):
-    print("Ingrese el ID deseado:")
-    id = input()
-    try:
-        ConfirmarGrafico(int(id))
+try:
+    while (confirmacion != "Y"):
+        print("Ingrese el ID deseado:")
+        id = input()
+        graphName = ConfirmarGrafico(int(id))
+        print(graphName)
         print("¿Es este el grafico que desea generar? (y/n)")
         confirmacion = input().upper()
         if confirmacion != "Y":
             if confirmacion != "N":
                 print("Opción no valida")
-    except:
-         print("Opción no valida")
-
-print("Ingrese fecha desde cuando inice el grafico (dd/mm/yyyy):")
-fechaDesde = input().split("/")
-print("Ingrese fecha hasta cuando mostrar los datos (dd/mm/yyyy):")
-fechaHasta = input().split("/")
-try:
-    CreateGraph(int(id), fechaDesde[0],fechaDesde[1], fechaDesde[2], fechaHasta[0], fechaHasta[1], fechaHasta[2])
-except IndexError:
-    print("Error el formato de la fecha colocada")
+    print("Ingrese fecha desde cuando inice el grafico (dd/mm/yyyy):")
+    fechaDesde = input().split("/")
+    print("Ingrese fecha hasta cuando mostrar los datos (dd/mm/yyyy):")
+    fechaHasta = input().split("/")
+    try:
+        CreateGraph(int(id), fechaDesde[0],fechaDesde[1], fechaDesde[2], fechaHasta[0], fechaHasta[1], fechaHasta[2])
+    except IndexError:
+        print("Error el formato de la fecha colocada")
+except NameError:
+    print("No hay grafico que se pueda generar con ese id")
 except ValueError:
-    print("Error en el id")
+    print("No hay grafico que se pueda generar con ese id")
+except:
+    print("Opción no valida")
+
